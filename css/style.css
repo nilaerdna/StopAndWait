@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lexend Deca", sans-serif;
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+body {
+  /* Coloring */
+  background: white;
+}
+
+.hero-container {
+  /* Coloring */
+  color: white;
+  background: #111111;
+  /* Sizing */
+  width: 100vw;
+  height: 10rem;
+  /* Placement */
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.content-container {
+  /* Spacing */
+  margin: 2rem;
+  /* Placement */
+  text-align: center;
+}
+
+.cases-container {
+  /* Placement */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cases-content {
+  /* Styling */
+  border-radius: 0.5rem;
+  /* Coloring */
+  background: black;
+  color: aliceblue;
+  /* Positioning */
+  flex: 1 1 400px;
+  /* Placement */
+  display: grid;
+  place-items: center;
+  text-align: center;
+  /* Spacing */
+  margin: 0.5rem;
+  padding: 2rem;
+}
+
+section {
+  /* Top, Right, Bottom, Left */
+  margin: 2rem 0.5rem 2rem 0.5rem;
+}
+
+.cases-content.green {
+  background: #48c774;
+}
+
+.cases-content.red {
+  background: #d72323;
+}
+.cases-content.yellow {
+  background: #ffdd57;
+  color: #4a4a4a;
+}
+.cases-content.blue {
+  background: #1e90ff;
+}
+
+#gotoSimulation {
+  padding: 0.5rem 2rem 0.5rem 2rem;
+}
+
+#footer {
+  /* Coloring */
+  background: #f5f5f5;
+  /* Sizing */
+  width: 100vw;
+  height: 5rem;
+  /* Placement */
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+@media (orientation: portrait) {
+  #footer {
+    /* Positioning */
+    position: absolute;
+  }
+}
+
+@media (orientation: landscape) {
+  #footer {
+    /* Positioning */
+    position: absolute;
+    bottom: 0;
+  }
+}

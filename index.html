@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>Stop and Wait</h1>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content-container">
+        <section id="#definition">
+          <h1>
+            Cos'è?
+          </h1>
+          <p>
+            Stop-and-wait, noto anche come protocollo a bit alternato, è un
+            metodo nelle telecomunicazioni per inviare informazioni tra due
+            dispositivi collegati. Assicura che le informazioni non vengano
+            perse a causa della caduta dei pacchetti e che i pacchetti vengano
+            ricevuti nell'ordine corretto.
+          </p>
+        </section>
+        <section id="#cases">
+          <div class="cases-container">
+            <div class="cases-content green">
+              <h2>Caso 1</h2>
+              <h3>Tutto va bene</h3>
+              <p>
+                Tutto a a buon fine e la comunicazione tra i due dispositivi
+                continua.
+              </p>
+            </div>
+            <div class="cases-content red">
+              <h2>Caso 2</h2>
+              <h3>Il messaggio inviato non arriva</h3>
+              <p>
+                Dopo aver atteso un certo tempo il mittente invia nuovamente lo
+                STESSO MESSAGGIO con lo STESSO NUMERO.
+              </p>
+            </div>
+            <div class="cases-content yellow">
+              <h2>Caso 3</h2>
+              <h3>Il messaggio inviato arriva errato</h3>
+              <p>
+                Il destinatario controlla il messaggio, identifica un errore in
+                trasmissione e NON manda ACK di risposta Dopo aver atteso un
+                certo tempo il mittente invia nuovamente lo STESSO MESSAGGIO con
+                lo STESSO NUMERO.
+              </p>
+            </div>
+            <div class="cases-content blue">
+              <h2>Caso 4</h2>
+              <h3>
+                Il messaggio inviato arriva corretto ma l’ACK di risposta non
+                arriva
+              </h3>
+              <p>
+                Il destinatario invia ACK di risposta che non arriva al mittente
+                Dopo aver atteso un certo tempo il mittente invia nuovamente lo
+                STESSO MESSAGGIO con lo STESSO NUMERO.
+              </p>
+            </div>
+          </div>
+        </section>
+        <button id="gotoSimulation">Accedi alla nostra simulazione!</button>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="footer-content">
+        <p>Andrea Lin, Mattia Ferrari, Giacomo Camellini - 2020.</p>
+      </div>
+    </div>
+  </body>
+</html>
