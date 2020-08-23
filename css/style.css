@@ -22,7 +22,9 @@ body {
 .hero-container {
   /* Coloring */
   color: white;
-  background: #111111;
+  background-image: url("matrix.gif"); /* background: #111111; */
+  background-size: cover;
+  background-repeat: no-repeat;
   /* Sizing */
   width: 100%;
   height: 10rem;
@@ -36,8 +38,15 @@ body {
   /* Spacing */
   margin: 2rem;
   /* Placement */
+  display: grid;
+  place-items: center;
   text-align: center;
 }
+
+#definition {
+  max-width: 75%;
+}
+
 
 .cases-container {
   /* Placement */
@@ -65,7 +74,15 @@ body {
 
 section {
   /* Top, Right, Bottom, Left */
-  margin: 2rem 0.5rem 2rem 0.5rem;
+  margin: 1rem 0.5rem 1rem 0.5rem;
+}
+
+.cases-content {
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.cases-content > * {
+  margin: 0.5rem;
 }
 
 .cases-content.green {
@@ -83,8 +100,26 @@ section {
   background: #1e90ff;
 }
 
-#buttons > * {
+button {
   padding: 0.5rem 2rem 0.5rem 2rem;
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: #f5f5f5 2px solid;
+  background: #f5f5f5;
+  border-radius: 15px;
+  transition: 0.2s ease-in-out;
+  outline: none;
+}
+
+button:hover {
+  border: #dddddd 2px solid;
+  background: #dddddd;
+  border-radius: 15px;
+}
+
+button:active {
+  border: #cacaca 2px solid;
+  background: #cacaca;
+  border-radius: 15px;
 }
 
 #footer {
@@ -100,7 +135,7 @@ section {
 }
 
 #modal {
-  visibility: hidden;
+  display: none;
 }
 
 .modal-background {
@@ -121,5 +156,17 @@ section {
 }
 
 #close-modal {
-  padding: 1rem 2rem 1rem 2rem;
+  color: #ffffff;
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+  transition: .1s ease-in-out;
+}
+
+#close-modal:hover {
+  color: #dddddd;
+}
+
+#close-modal:active {
+  color: #cacaca;
 }
