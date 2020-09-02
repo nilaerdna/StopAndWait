@@ -3,7 +3,7 @@ class EventController{
         this.x = 0;
         this.y = 0;
         this.sender = true;
-        this.case = 2;
+        this.case = 1;
     }
     nextEvent(){
 

@@ -1,34 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="../css/style.css">
-        <style>
-            .body-container {
-                display: grid;
-                place-items: center;
-                text-align: center;
-                width: 100vw;
-                height: 100vh;
-                background: #111111;
-            }
-            
-            canvas {
-                border:1px solid black;
-            }
-        </style>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>S&W - Simulazione</title>
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="simulation.css" />
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="../favicon/android-icon-192x192.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png" />
+        <link rel="manifest" href="../favicon/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-TileImage" content="../favicon/ms-icon-144x144.png" />
+        <meta name="theme-color" content="#ffffff" />
     </head>
+
     <body>
         <div class="body-container">
             <div class="simulation-container">
                 <div id="canva-container"></div>
-                <button id="start">Start</button>
+                <div id="controls-container">
+                    <div id="controls-content">
+                        <button id="start">START</button>
+                        <h1>Controlli</h1>
+                        <div class="control">
+                            <label for="wrong">Possibilità che il messaggio arrivi sbagliato</label>
+                            <input type="range" id="wrong" name="wrong" min="0" max="100" value="0"/>
+                            <span id="wrongOutput"></span>
+                        </div>
+                        <div class="control">
+                            <label for="lost">Possibilità che il messaggio non arrivi</label>
+                            <input type="range" id="lost" name="lost" min="0" max="100" value="0"/>
+                            <span id="lostOutput"></span>
+                        </div>
+                        <div class="control">
+                            <label for="timeout">Secondi di timeout</label>
+                            <input type="range" id="timeout" name="timeout" min="3" max="7" value="3"/>
+                            <span id="timeoutOutput"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+        <script defer src="modules/sliders.js"></script>
         <script defer src="modules/EventController.js"></script>
         <script defer src="modules/Line.js"></script>
         <script defer src="main.js"></script>

@@ -1,5 +1,5 @@
 var widthA = 300;
-var heightA = 900;
+var heightA = 600;
 const event = new EventController();
 
 var deleting = false;
