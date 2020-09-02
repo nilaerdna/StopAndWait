@@ -14,14 +14,13 @@ lines = [];
 let current = new LineAnimation(event.nextEvent());
 
 function preload() {
-  img = loadImage('./images/envelope.png');
-  cross = loadImage("./images/cross.png");
+  img = loadImage('./icons/envelope.png');
+  cross = loadImage("./icons/cross.png");
 }
 
-
 function setup() {
-  
-  createCanvas(widthA, heightA);
+  let myCanvas = createCanvas(widthA, heightA);
+  myCanvas.parent("canva-container");
   noLoop();
   frameRate(60);
 }
