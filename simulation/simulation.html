@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <style>
+            .body-container {
+                display: grid;
+                place-items: center;
+                text-align: center;
+                width: 100vw;
+                height: 100vh;
+                background: #111111;
+            }
+            
+            canvas {
+                border:1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="body-container">
+            <div class="simulation-container">
+                <div id="canva-container"></div>
+                <button id="start">Start</button>
+            </div>
+        </div>
+        
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+        <script defer src="modules/EventController.js"></script>
+        <script defer src="modules/Line.js"></script>
+        <script defer src="main.js"></script>
+    </body>
+</html>
