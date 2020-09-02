@@ -3,8 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Simulazione Stop & Wait</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
   </head>
   <body>
     <div class="hero-container">
@@ -15,9 +33,9 @@
     <div class="content">
       <div class="content-container">
         <section id="definition">
-          <h1>
+          <h2>
             Cos'è?
-          </h1>
+          </h2>
           <p>
             Stop-and-wait, noto anche come protocollo a bit alternato, è un
             metodo nelle telecomunicazioni per inviare informazioni tra due
@@ -32,8 +50,7 @@
               <h2>Caso 1</h2>
               <h3>Tutto va bene</h3>
               <p>
-                Tutto a a buon fine e la comunicazione tra i due dispositivi
-                continua.
+                Il mittente invia il frame e riceve l’ACK di risposta nei tempi prestabiliti. La comunicazione tra i due dispositivi continua.
               </p>
               <button class="modal-button" onclick="openModal('Normal_Operation.png')">Illustrazione</button>
             </div>
@@ -41,8 +58,7 @@
               <h2>Caso 2</h2>
               <h3>Il messaggio inviato non arriva</h3>
               <p>
-                Dopo aver atteso un certo tempo il mittente invia nuovamente lo
-                STESSO MESSAGGIO con lo STESSO NUMERO.
+                Il mittente invia il frame ma non riceve l’ACK di risposta entro i tempi prestabiliti, allora il mittente rinvierà lo stesso identico messaggio con lo stesso numero di assegnazione.
               </p>
               <button class="modal-button" onclick="openModal('Frame_Loss.png')">Illustrazione</button>
             </div>
@@ -50,10 +66,7 @@
               <h2>Caso 3</h2>
               <h3>Il messaggio inviato arriva errato</h3>
               <p>
-                Il destinatario controlla il messaggio, identifica un errore in
-                trasmissione e NON manda ACK di risposta Dopo aver atteso un
-                certo tempo il mittente invia nuovamente lo STESSO MESSAGGIO con
-                lo STESSO NUMERO.
+                Il destinatario controlla il messaggio, rileva un errore e non manda l’ACK di risposta al mittente, quest’ultimo dopo aver atteso i tempi prestabiliti rinvierà nuovamente lo stesso identico messaggio con lo stesso numero di assegnazione.
               </p>
               <button class="modal-button" onclick="openModal('')">Illustrazione</button>
             </div>
@@ -64,9 +77,7 @@
                 arriva
               </h3>
               <p>
-                Il destinatario invia ACK di risposta che non arriva al mittente
-                Dopo aver atteso un certo tempo il mittente invia nuovamente lo
-                STESSO MESSAGGIO con lo STESSO NUMERO.
+                Il destinatario invia l’ACK di risposta ma non arriva al mittente, quest’ultimo dopo aver atteso i tempi prestabiliti rinvierà nuovamente lo stesso identico messaggio con lo stesso numero di assegnazione.
               </p>
               <button class="modal-button" onclick="openModal('ACK_Loss.png')">Illustrazione</button>
             </div>
@@ -74,23 +85,31 @@
         </section>
         <section id="buttons">
           <button onclick="openModal('Recap.png')">Visualizza un'infografica sulle casistiche</button>
-          <button onclick="window.location.assign('simulation.html');">Accedi alla nostra simulazione interattiva!</button>
+          <br>
+          <button id="toSimulation"><a href="/simulation">Accedi alla nostra simulazione interattiva!</a></button>
         </section>
       </div>
     </div>
     <div id="modal">
       <div class="modal-background">
+        <a id="close-modal">
+          <i class="fas fa-2x fa-times-circle"></i>
+        </a>
         <div class="modal-content">
           <img id="modal-image" src=""/>
         </div>
-        <button id="close-modal">Chiudi</button>
       </div>
     </div>
     <footer id="footer">
       <div class="footer-content">
-        <p>Andrea Lin, Mattia Ferrari, Giacomo Camellini - 2020.</p>
+        <p>
+          Andrea Lin, Mattia Ferrari, Giacomo Camellini.
+          <br>
+          4D, 2020.
+        </p>
       </div>
     </footer>
-    <script src="modal.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" integrity="sha384-3Nqiqht3ZZEO8FKj7GR1upiI385J92VwWNLj+FqHxtLYxd9l+WYpeqSOrLh0T12c" crossorigin="anonymous"></script>
+    <script defer src="modal.js"></script>
   </body>
 </html>

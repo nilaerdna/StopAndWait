@@ -19,25 +19,49 @@ body {
   background: white;
 }
 
-.hero-container {
-  /* Coloring */
-  color: white;
-  background: #111111;
-  /* Sizing */
-  width: 100%;
-  height: 10rem;
+.content-container {
+  /* Spacing */
+  margin: 1rem 2rem 1rem 2rem;
   /* Placement */
   display: grid;
   place-items: center;
   text-align: center;
 }
 
-.content-container {
-  /* Spacing */
-  margin: 2rem;
+#definition {
+  max-width: 75%;
+}
+
+/* Sections */
+
+section {
+  /* Top, Right, Bottom, Left */
+  margin: 1rem 0.5rem 1rem 0.5rem;
+}
+
+/* Hero */
+
+.hero-content > h1 {
+  font-size: 50px;
+  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-container {
+  /* Coloring */
+  color: white;
+  background-image: url("matrix.gif"); /* background: #111111; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* Sizing */
+  width: 100%;
+  height: 12.5rem;
   /* Placement */
+  display: grid;
+  place-items: center;
   text-align: center;
 }
+
+/* Cases */
 
 .cases-container {
   /* Placement */
@@ -53,7 +77,7 @@ body {
   background: black;
   color: aliceblue;
   /* Positioning */
-  flex: 1 1 400px;
+  flex: 1 1 300px;
   /* Placement */
   display: grid;
   place-items: center;
@@ -63,9 +87,12 @@ body {
   padding: 2rem;
 }
 
-section {
-  /* Top, Right, Bottom, Left */
-  margin: 2rem 0.5rem 2rem 0.5rem;
+.cases-content {
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.cases-content > * {
+  margin: 0.5rem;
 }
 
 .cases-content.green {
@@ -83,14 +110,51 @@ section {
   background: #1e90ff;
 }
 
-#buttons > * {
+/* Buttons */
+
+button {
   padding: 0.5rem 2rem 0.5rem 2rem;
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: #f5f5f5 2px solid;
+  background: #f5f5f5;
+  border-radius: 15px;
+  transition: 0.2s ease-in-out;
+  outline: none;
 }
+
+button:hover {
+  border: #dddddd 2px solid;
+  background: #dddddd;
+  border-radius: 15px;
+}
+
+button:active {
+  border: #cacaca 2px solid;
+  background: #cacaca;
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 900px) {
+  button#toSimulation {
+    font-size: 1.5rem;
+    border-radius: 75px;
+    padding: 1rem 4.5rem 1rem 4.5rem;
+  }
+}
+
+/* toSimulation */
+a, a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* Footer */
 
 #footer {
   /* Coloring */
   background: #f5f5f5;
   /* Sizing */
+  font-size: 1rem;
   width: 100%;
   height: 5rem;
   /* Placement */
@@ -99,8 +163,10 @@ section {
   text-align: center;
 }
 
+/* Modal */
+
 #modal {
-  visibility: hidden;
+  display: none;
 }
 
 .modal-background {
@@ -121,5 +187,17 @@ section {
 }
 
 #close-modal {
-  padding: 1rem 2rem 1rem 2rem;
+  color: #ffffff;
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+  transition: 0.1s ease-in-out;
+}
+
+#close-modal:hover {
+  color: #dddddd;
+}
+
+#close-modal:active {
+  color: #cacaca;
 }
