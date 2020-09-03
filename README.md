@@ -4,7 +4,7 @@ TEPSIT - Compito Estate 2020.
 ## Consegna
 DLL, Controllo di flusso - Stop & Wait: mostrare la numerazione dei pacchetti, l'invio con successo e l'invio senza succcesso, l'utilizzo del timer	
 
-## 
+## Librerie utilizzate
 - [p5.js](https://p5js.org/) - JavaScript library for creative coding.
 
 ### Gruppo
