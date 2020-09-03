@@ -1,5 +1,5 @@
 class LineAnimation {
-    /*
+  /*
     constructor(startX, startY, endX, endY, number) {
         this.startX = startX;
         this.startY = startY;

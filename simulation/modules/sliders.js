@@ -1,23 +1,33 @@
+// Elementi Slider
 const wrongSlider = document.getElementById("wrong");
 const lostSlider = document.getElementById("lost");
 const timeoutSlider = document.getElementById("timeout");
 
+// Output Slider
 const wrongOutput = document.getElementById("wrongOutput");
 const lostOutput = document.getElementById("lostOutput");
 const timeoutOutput = document.getElementById("timeoutOutput");
 
-wrongOutput.innerHTML = wrongSlider.value;
-lostOutput.innerHTML = lostSlider.value;
-timeoutOutput.innerHTML = timeoutSlider.value + "s";
+// Variabili contenenti i valori dei slider
+var wrongValue = wrongSlider.value;
+var lostValue = lostSlider.value;
+var timeoutValue = timeoutSlider.value;
+
+wrongOutput.innerHTML = wrongValue;
+lostOutput.innerHTML = lostValue;
+timeoutOutput.innerHTML = timeoutValue + "s";
 
 wrongSlider.oninput = function() {
-  wrongOutput.innerHTML = this.value;
+  wrongValue = this.value;
+  wrongOutput.innerHTML = wrongValue;
 }
 
 lostSlider.oninput = function() {
-  lostOutput.innerHTML = this.value;
+  lostValue = this.value;
+  lostOutput.innerHTML = lostValue;
 }
 
 timeoutSlider.oninput = function() {
-  timeoutOutput.innerHTML = this.value + "s";
+  timeoutValue = this.value;
+  timeoutOutput.innerHTML = timeoutValue + "s";
 }
