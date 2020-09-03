@@ -1,33 +1,33 @@
 // Elementi Slider
 const wrongSlider = document.getElementById("wrong");
 const lostSlider = document.getElementById("lost");
-const timeoutSlider = document.getElementById("timeout");
+const ackSlider = document.getElementById("ack");
 
 // Output Slider
 const wrongOutput = document.getElementById("wrongOutput");
 const lostOutput = document.getElementById("lostOutput");
-const timeoutOutput = document.getElementById("timeoutOutput");
+const ackOutput = document.getElementById("ackOutput");
 
 // Variabili contenenti i valori dei slider
 var wrongValue = wrongSlider.value;
 var lostValue = lostSlider.value;
-var timeoutValue = timeoutSlider.value;
+var ackValue = ackSlider.value;
 
-wrongOutput.innerHTML = wrongValue;
-lostOutput.innerHTML = lostValue;
-timeoutOutput.innerHTML = timeoutValue + "s";
+wrongOutput.innerHTML = wrongValue + "%";
+lostOutput.innerHTML = lostValue + "%";
+ackOutput.innerHTML = ackValue + "%";
 
 wrongSlider.oninput = function() {
   wrongValue = this.value;
-  wrongOutput.innerHTML = wrongValue;
+  wrongOutput.innerHTML = wrongValue + "%";
 }
 
 lostSlider.oninput = function() {
   lostValue = this.value;
-  lostOutput.innerHTML = lostValue;
+  lostOutput.innerHTML = lostValue + "%";
 }
 
-timeoutSlider.oninput = function() {
-  timeoutValue = this.value;
-  timeoutOutput.innerHTML = timeoutValue + "s";
+ackSlider.oninput = function() {
+  ackValue = this.value;
+  ackOutput.innerHTML = ackValue + "%";
 }
