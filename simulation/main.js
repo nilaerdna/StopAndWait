@@ -37,6 +37,10 @@ function draw() {
       lines.push(current);
       current = new LineAnimation();
     }
+    
+    if (fermete < time) {
+      fermete++;
+    }
 
     if (fermete + 1 == time) {
       current = new LineAnimation(event.nextEvent());
@@ -45,7 +49,5 @@ function draw() {
     lines.forEach((element) => {
       element.draw(img);
     });
-
-    if (fermete < time) fermete++;
   }
 }
