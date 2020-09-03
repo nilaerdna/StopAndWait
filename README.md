@@ -9,5 +9,5 @@ DLL, Controllo di flusso - Stop & Wait: mostrare la numerazione dei pacchetti, l
 
 ### Gruppo
 - [Andrea Lin](https://github.com/nilaerdna), 4D.
-- [Mattia Ferrari](https://github.com/IlSassone), 4D
+- [Mattia Ferrari](https://github.com/IlSassone), 4D.
 - Giacomo Camellini, 4D.
