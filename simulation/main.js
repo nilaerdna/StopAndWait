@@ -1,53 +1,50 @@
-var widthA = 300;
-var heightA = 600;
-const event = new EventController();
-
-var deleting = false;
+var widthCanva = 300;
+var heightCanva = 600;
 var started = false;
-var img = null;
-var cross = null;
+
 const time = 75;
 var fermete = time;
 
-lines = [];
-let current = new LineAnimation(event.nextEvent());
+var receiver = new Receiver();
+var sender = new Sender();
 
-function preload() {
-  img = loadImage("./icons/envelope.png");
-  cross = loadImage("./icons/cross.png");
-}
+var senderLine = null;
+var receiverLine = null;
+
+lines = [];
 
 function setup() {
-  let myCanvas = createCanvas(widthA, heightA);
+  let myCanvas = createCanvas(widthCanva, heightCanva);
   myCanvas.parent("canva-container");
-  noLoop();
+  loop();
   frameRate(60);
 }
 
 document.getElementById("start").addEventListener("click", () => {
-  started = true;
-  loop();
+  if (roll(lostValue)) {
+    console.log("il frame non è arrivato, caso 2");
+  } else {
+    if (roll(wrongValue)) {
+      console.log("il frame è arrivato sbagliato, caso 3");
+    } else {
+      if (roll(ackValue)) {
+        console.log("l'ack non è arrivato, caso 4");
+      } else {
+        console.log("tutto è apposto, caso 1");
+      }
+    }
+  }
+  sender.nextStep();
 });
 
 function draw() {
   background(255);
-  if (started) {
-    if (current.draw(img) && fermete == time) {
-      fermete = 0;
-      lines.push(current);
-      current = new LineAnimation();
-    }
-    
-    if (fermete < time) {
-      fermete++;
-    }
+}
 
-    if (fermete + 1 == time) {
-      current = new LineAnimation(event.nextEvent());
-    }
-
-    lines.forEach((element) => {
-      element.draw(img);
-    });
+function roll(p) {
+  let temp = 100 - p;
+  if (Math.floor(Math.random() * 101) < temp) {
+    return false;
   }
+  return true;
 }
