@@ -1,53 +1,102 @@
-var widthA = 300;
-var heightA = 600;
-const event = new EventController();
-
-var deleting = false;
+var widthCanva = 300;
+var heightCanva = 600;
 var started = false;
-var img = null;
-var cross = null;
+
 const time = 75;
 var fermete = time;
 
-lines = [];
-let current = new LineAnimation(event.nextEvent());
+const controller = new Controller();
 
-function preload() {
-  img = loadImage("./icons/envelope.png");
-  cross = loadImage("./icons/cross.png");
-}
+var currentEvent = null;
+
+lines = [];
 
 function setup() {
-  let myCanvas = createCanvas(widthA, heightA);
+  let myCanvas = createCanvas(widthCanva, heightCanva);
   myCanvas.parent("canva-container");
-  noLoop();
+  loop();
   frameRate(60);
 }
 
 document.getElementById("start").addEventListener("click", () => {
-  started = true;
-  loop();
+  if(currentEvent == null && !controller.isFull()){
+    if (roll(lostValue)) {
+      console.log("il frame non è arrivato, caso 2");
+      currentEvent = controller.generateEvent(2);
+      
+    } else {
+      if (roll(wrongValue)) {
+        console.log("il frame è arrivato sbagliato, caso 3");
+        currentEvent = controller.generateEvent(3);
+      } else {
+        if (roll(ackValue)) {
+          console.log("l'ack non è arrivato, caso 4");
+          currentEvent = controller.generateEvent(4);
+        } else {
+          console.log("tutto è apposto, caso 1");
+          currentEvent = controller.generateEvent(1);
+          
+        }
+      }
+    }
+    console.log(currentEvent);
+  }
+  
+  
 });
 
 function draw() {
   background(255);
-  if (started) {
-    if (current.draw(img) && fermete == time) {
-      fermete = 0;
-      lines.push(current);
-      current = new LineAnimation();
-    }
+  if(currentEvent!=null) {
+    var temp = currentEvent.draw();
+    if (temp != undefined &&  temp != null && temp != "finite") lines.push(temp);
+    if(temp == "finite") currentEvent = null;
     
-    if (fermete < time) {
-      fermete++;
-    }
-
-    if (fermete + 1 == time) {
-      current = new LineAnimation(event.nextEvent());
-    }
-
-    lines.forEach((element) => {
-      element.draw(img);
-    });
   }
+
+  lines.forEach(element => {
+    try { 
+      element.draw();
+    } catch (error) {
+      
+    }
+  });
+
+  if (controller.isFull()&& currentEvent == null) {
+    console.log("svuotare");
+
+    lines.forEach(element => { //muove in alto e controlla se una linea va eliminata
+      try {
+        if(element.moveUp()) element.isDeleted = true;
+      } catch (error) {
+
+      }
+    });
+
+    for(let i = lines.length-1; i>=0; i--){ //le linee segnate come da eliminare vengono eliminate
+      if(lines[i].isDeleted) lines.splice(i, 1);
+
+    }
+    if(lines.length == 0) controller.resetCords(); //le cordinate del controller si resettano
+
+
+  }
+
+  //image(cross, 10, 10, 50, 50);
+}
+
+
+
+
+
+
+
+function roll(p) {
+  let temp = 100 - p;
+  if (Math.floor(Math.random() * 100) < temp) {
+    
+    return false;
+    
+  }
+  return true;
 }
