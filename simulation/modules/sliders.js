@@ -1,3 +1,5 @@
+
+
 // Elementi Slider
 const wrongSlider = document.getElementById("wrong");
 const lostSlider = document.getElementById("lost");
@@ -29,5 +31,19 @@ lostSlider.oninput = function() {
 
 ackSlider.oninput = function() {
   ackValue = this.value;
+  ackOutput.innerHTML = ackValue + "%";
+}
+
+function randomEvents(){
+  wrongValue = Math.floor(Math.random() * 100);
+  wrongSlider.value = wrongValue;
+  wrongOutput.innerHTML = wrongValue + "%";
+
+  lostValue = Math.floor(Math.random() * 100);
+  lostSlider.value = lostValue;
+  lostOutput.innerHTML = lostValue + "%";
+
+  ackValue = Math.floor(Math.random() * 100);
+  ackSlider.value = ackValue;
   ackOutput.innerHTML = ackValue + "%";
 }
