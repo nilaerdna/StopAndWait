@@ -84,6 +84,7 @@ function draw() {
     if (lines.length == 0) {
       controller.resetCords();
       svuotare = false;
+      document.getElementById("start").click();
     } //le cordinate del controller si resettano
   }
 
