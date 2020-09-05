@@ -5,6 +5,8 @@ var started = false;
 const time = 75;
 var fermete = time;
 
+var svuotare = false;
+
 const controller = new Controller();
 
 var currentEvent = null;
@@ -41,8 +43,14 @@ document.getElementById("start").addEventListener("click", () => {
         }
       }
     }
+    
     console.log(currentEvent);
   }
+
+  if (controller.isFull() && currentEvent == null) {
+    svuotare = true;
+  }
+  
 });
 
 function draw() {
@@ -59,7 +67,7 @@ function draw() {
     } catch (error) {}
   });
 
-  if (controller.isFull() && currentEvent == null) {
+  if (svuotare) {
     console.log("svuotare");
 
     lines.forEach((element) => {
@@ -73,7 +81,10 @@ function draw() {
       //le linee segnate come da eliminare vengono eliminate
       if (lines[i].isDeleted) lines.splice(i, 1);
     }
-    if (lines.length == 0) controller.resetCords(); //le cordinate del controller si resettano
+    if (lines.length == 0) {
+      controller.resetCords();
+      svuotare = false;
+    } //le cordinate del controller si resettano
   }
 
   //image(cross, 10, 10, 50, 50);
