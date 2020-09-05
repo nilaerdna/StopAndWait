@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stop & Wait</title>
+    <title>Stop and Wait</title>
     <link rel="stylesheet" href="css/style.css"/>
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -38,10 +38,9 @@
           </h2>
           <p>
             Stop-and-wait, noto anche come protocollo a bit alternato, è un
-            metodo nelle telecomunicazioni per inviare informazioni tra due
+            metodo utilizzato nelle telecomunicazioni per inviare informazioni tra due
             dispositivi collegati. Assicura che le informazioni non vengano
-            perse a causa della caduta dei pacchetti e che i pacchetti vengano
-            ricevuti nell'ordine corretto.
+            perse e che i pacchetti vengano ricevuti nell'ordine corretto.
           </p>
         </section>
         <section id="cases">
@@ -58,7 +57,7 @@
               <h2>Caso 2</h2>
               <h3>Il messaggio inviato non arriva</h3>
               <p>
-                Il mittente invia il frame ma non riceve l’ACK di risposta entro i tempi prestabiliti, allora il mittente rinvierà lo stesso identico messaggio con lo stesso numero di assegnazione.
+                Il mittente invia il frame ma non arriva, il destinatario non invia l'ACK, e il mittente non ricevendo l’ACK di risposta entro i tempi prestabiliti rinvierà lo stesso identico messaggio con lo stesso numero di assegnazione.
               </p>
               <button class="modal-button" onclick="openModal('Frame_Loss.png')">Illustrazione</button>
             </div>
@@ -77,7 +76,7 @@
                 arriva
               </h3>
               <p>
-                Il destinatario invia l’ACK di risposta ma non arriva al mittente, quest’ultimo dopo aver atteso i tempi prestabiliti rinvierà nuovamente lo stesso identico messaggio con lo stesso numero di assegnazione.
+                Il destinatario invia l’ACK di risposta ma non arriva al mittente, quest’ultimo dopo aver atteso i tempi prestabiliti rinvierà nuovamente lo stesso identico messaggio con lo stesso numero di assegnazione, il destinatario ricevendo un pacchetto uguale all'ultimo, lo scarta e invia l'ACK.
               </p>
               <button class="modal-button" onclick="openModal('ACK_Loss.png')">Illustrazione</button>
             </div>
