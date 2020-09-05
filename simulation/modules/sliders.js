@@ -1,5 +1,3 @@
-
-
 // Elementi Slider
 const wrongSlider = document.getElementById("wrong");
 const lostSlider = document.getElementById("lost");
@@ -34,16 +32,20 @@ ackSlider.oninput = function() {
   ackOutput.innerHTML = ackValue + "%";
 }
 
+document.getElementById("randomize").addEventListener("click", () => {
+  randomEvents();
+});
+
 function randomEvents(){
-  wrongValue = Math.floor(Math.random() * 100);
+  wrongValue = Math.floor(Math.random() * 101);
   wrongSlider.value = wrongValue;
   wrongOutput.innerHTML = wrongValue + "%";
 
-  lostValue = Math.floor(Math.random() * 100);
+  lostValue = Math.floor(Math.random() * 101);
   lostSlider.value = lostValue;
   lostOutput.innerHTML = lostValue + "%";
 
-  ackValue = Math.floor(Math.random() * 100);
+  ackValue = Math.floor(Math.random() * 101);
   ackSlider.value = ackValue;
   ackOutput.innerHTML = ackValue + "%";
 }

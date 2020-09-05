@@ -8,9 +8,9 @@ class Controller {
 
     generateEvent(evNum){
         let evtLines = [];
+        console.log(evNum);
         switch(evNum){
             case 1: {
-                
                 evtLines.push(new LineAnimation(this.nextEvent()));
                 evtLines.push(new LineAnimation(this.nextEvent()));
 

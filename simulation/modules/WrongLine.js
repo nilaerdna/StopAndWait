@@ -1,10 +1,11 @@
 
 class WrongLine extends LineAnimation {
     constructor(args) {
-        super(args);
-        this.endX = 150;
-        this.endY = this.endY - (Math.floor(Math.random() * 50) + 25);
-        console.log(this.endY);
+      super(args);
+      this.endX = 150;
+      this.endY = this.endY - (Math.floor(Math.random() * 50) + 25);
+      // this.endY = this.endY * (Math.floor(Math.random() * 98) + 1) / 100;"
+      console.log("endY:" + this.endY);
     }
     draw() {
 
