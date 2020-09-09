@@ -51,7 +51,7 @@
               <p>
                 Il mittente invia il frame e riceve l’ACK di risposta nei tempi prestabiliti. La comunicazione tra i due dispositivi continua.
               </p>
-              <button class="modal-button" onclick="openModal('Normal_Operation.png')">Illustrazione</button>
+              <button class="modal-button" onclick="openModal('Normal_Operation.gif')">Illustrazione</button>
             </div>
             <div class="cases-content red">
               <h2>Caso 2</h2>
@@ -59,7 +59,7 @@
               <p>
                 Il mittente invia il frame ma non arriva, il destinatario non invia l'ACK, e il mittente non ricevendo l’ACK di risposta entro i tempi prestabiliti rinvierà lo stesso identico messaggio con lo stesso numero di assegnazione.
               </p>
-              <button class="modal-button" onclick="openModal('Frame_Loss.png')">Illustrazione</button>
+              <button class="modal-button" onclick="openModal('Frame_Loss.gif')">Illustrazione</button>
             </div>
             <div class="cases-content yellow">
               <h2>Caso 3</h2>
@@ -67,7 +67,7 @@
               <p>
                 Il destinatario controlla il messaggio, rileva un errore e non manda l’ACK di risposta al mittente, quest’ultimo dopo aver atteso i tempi prestabiliti rinvierà nuovamente lo stesso identico messaggio con lo stesso numero di assegnazione.
               </p>
-              <button class="modal-button" onclick="openModal('')">Illustrazione</button>
+              <button class="modal-button" onclick="openModal('Frame_Error.gif')">Illustrazione</button>
             </div>
             <div class="cases-content blue">
               <h2>Caso 4</h2>
@@ -78,7 +78,7 @@
               <p>
                 Il destinatario invia l’ACK di risposta ma non arriva al mittente, quest’ultimo dopo aver atteso i tempi prestabiliti rinvierà nuovamente lo stesso identico messaggio con lo stesso numero di assegnazione, il destinatario ricevendo un pacchetto uguale all'ultimo, lo scarta e invia l'ACK.
               </p>
-              <button class="modal-button" onclick="openModal('ACK_Loss.png')">Illustrazione</button>
+              <button class="modal-button" onclick="openModal('ACK_Loss.gif')">Illustrazione</button>
             </div>
           </div>
         </section>
